@@ -4,6 +4,8 @@
     <p class="card-text">{{ .Content }}</p>
   </div>
   <div class="col-sm-4 text-xs-center">
-    <img src="/{{ .Params.image_url }}" alt="" />
+    {{ with .Params.image_url }}
+      <img src="/{{ . }}" alt="" />
+    {{ end }}
   </div>
 </div>

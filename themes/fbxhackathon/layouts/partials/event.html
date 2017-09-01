@@ -1,7 +1,9 @@
 {{ range ( where .Data.Pages "Type" "event" ) }}
-  <div class="card">
-    <div class="card-block">
-      {{ .Render "summary" }}
+  {{ if eq .Params.featured "true" }}
+    <div class="card">
+      <div class="card-block">
+        {{ .Render "summary" }}
+      </div>
     </div>
-  </div>
+  {{ end }}
 {{ end }}
